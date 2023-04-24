@@ -1,5 +1,5 @@
-import 'package:exam24/screens/controller/home_controller.dart';
 import 'package:exam24/screens/model/home_modal.dart';
+import 'package:exam24/screens/providerr/provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -28,6 +28,9 @@ class _DetailScreenState extends State<DetailScreen> {
         backgroundColor: Colors.black,
           title: Text("Detail Screen"),centerTitle: true,
         actions: [
+          IconButton(onPressed: () {
+            Navigator.pushNamed(context, 'api');
+          }, icon: Icon(Icons.arrow_forward)),
           IconButton(onPressed: () {
               showDialog(context: context, builder: (context) {
                 return AlertDialog(

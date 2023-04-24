@@ -1,4 +1,4 @@
-import 'package:exam24/screens/controller/home_controller.dart';
+import 'package:exam24/screens/providerr/provider.dart';
 import 'package:exam24/screens/view/detail_screen/view/detail_screen.dart';
 import 'package:exam24/screens/view/sign_up/view/sign_up.dart';
 import 'package:exam24/utils/share_pref.dart';

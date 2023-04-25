@@ -16,7 +16,7 @@ void main()
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        // initialRoute: 'detail',
+        initialRoute: 'detail',
         routes: {
           '/':(p0) => SignInScreen(),
           'signup':(p0) => SignUpScreen(),

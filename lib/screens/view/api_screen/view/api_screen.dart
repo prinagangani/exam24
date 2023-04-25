@@ -12,11 +12,11 @@ class ApiScreen extends StatefulWidget {
 }
 
 class _ApiScreenState extends State<ApiScreen> {
-  @override
-  void initState() {
-    Provider.of<HomeProvider>(context,listen: false).call();
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   Provider.of<HomeProvider>(context,listen: false).call();
+  //   super.initState();
+  // }
   HomeProvider? ht,hf;
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,9 @@ class _ApiScreenState extends State<ApiScreen> {
     hf = Provider.of<HomeProvider>(context,listen: false);
     return SafeArea(
         child: Scaffold(
+          backgroundColor: Colors.cyan,
       appBar: AppBar(
+        backgroundColor: Colors.black,
         title: Text("Api Calling"),
       ),
         body: FutureBuilder(
@@ -38,14 +40,18 @@ class _ApiScreenState extends State<ApiScreen> {
               {
                 CountryModal? c1 = snapshot.data;
                 return ListView.builder(itemBuilder: (context, index) {
-                  return ListTile(
-                    leading: Text("${c1!.countriesStat[index].countryName}"),
-                    title: Text("Death : ${c1!.countriesStat[index].deaths}"),
-                    subtitle: Text("Active cases${c1!.countriesStat[index].cases}"),
+                  return Container(
+                    padding: EdgeInsets.all(8),
+                    decoration: BoxDecoration(border: Border.all(width: 0.5,color: Colors.black)),
+                    child: ListTile(
+                      leading: Text("${c1!.countriesStat[index].countryName}"),
+                      title: Text("Death : ${c1!.countriesStat[index].deaths}"),
+                      subtitle: Text("Active cases${c1!.countriesStat[index].cases}"),
+                    ),
                   );
                 },itemCount: c1!.countriesStat.length,);
               }
-            return CircularProgressIndicator();
+            return Center(child: CircularProgressIndicator());
           },
         ),
         ),
